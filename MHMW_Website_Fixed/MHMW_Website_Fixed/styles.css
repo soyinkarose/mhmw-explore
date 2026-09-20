@@ -615,7 +615,7 @@ input {
 }
 
 .future h2 {
-  font-size: 56px;
+  font-size: 43px;
   line-height: 1;
   margin: 0 0 25px;
   white-space: nowrap;
@@ -870,6 +870,9 @@ footer a {
   .future {
     grid-template-columns: 1fr 1fr;
   }
+
+  .future h2 {
+    white-space: normal;
 
   .future blockquote {
     grid-column: 1/-1;
