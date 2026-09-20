@@ -521,7 +521,7 @@ input {
 
 .future {
   display: grid;
-  grid-template-columns: 1fr 1fr .65fr;
+  grid-template-columns: 1fr 1.4fr;
   min-height: 620px;
   background: #eeebe4;
 }
@@ -611,12 +611,14 @@ input {
 .future-copy {
   padding: 100px 6vw;
   align-self: center;
+  max-width: 900px;
 }
 
 .future h2 {
   font-size: 56px;
   line-height: 1;
   margin: 0 0 25px;
+  white-space: nowrap;
 }
 
 .future-copy>p:not(.eyebrow) {
