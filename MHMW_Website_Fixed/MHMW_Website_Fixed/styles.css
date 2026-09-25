@@ -23,6 +23,11 @@ input {
   font: inherit;
 }
 
+
+/* =========================================================
+   HEADER
+========================================================= */
+
 .site-header {
   height: 78px;
   position: absolute;
@@ -34,7 +39,7 @@ input {
   align-items: center;
   padding: 0 5vw;
   color: white;
-  border-bottom: 1px solid rgba(255,255,255,.12);
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
 }
 
 .brand {
@@ -51,7 +56,7 @@ input {
   border-radius: 11px 11px 4px 4px;
   display: grid;
   place-items: center;
-  font-family: Georgia;
+  font-family: Georgia, serif;
   font-weight: 700;
 }
 
@@ -101,6 +106,11 @@ input {
   font-size: 22px;
 }
 
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -139,10 +149,15 @@ input {
 
 .btn-glass {
   color: white;
-  border-color: rgba(255,255,255,.55);
-  background: rgba(10,10,8,.2);
+  border-color: rgba(255, 255, 255, .55);
+  background: rgba(10, 10, 8, .2);
   backdrop-filter: blur(8px);
 }
+
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero {
   height: 780px;
@@ -155,7 +170,8 @@ input {
 .hero-media {
   position: absolute;
   inset: 0;
-  background-image: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2200&q=88");
+  background-image:
+    url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2200&q=88");
   background-size: cover;
   background-position: center;
   animation: heroZoom 18s ease-in-out infinite alternate;
@@ -173,13 +189,13 @@ input {
   background:
     linear-gradient(
       90deg,
-      rgba(7,8,6,.8) 0%,
-      rgba(7,8,6,.45) 43%,
-      rgba(7,8,6,.08) 70%
+      rgba(7, 8, 6, .8) 0%,
+      rgba(7, 8, 6, .45) 43%,
+      rgba(7, 8, 6, .08) 70%
     ),
     linear-gradient(
       0deg,
-      rgba(7,8,6,.35),
+      rgba(7, 8, 6, .35),
       transparent 50%
     );
 }
@@ -188,15 +204,19 @@ input {
   position: absolute;
   left: 5vw;
   top: 190px;
-  width: min(650px,70vw);
+  width: min(650px, 70vw);
 }
+
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
 
 .eyebrow {
   font-size: 10px;
   letter-spacing: .32em;
   font-weight: 600;
-  margin: 0 0 24px;
-  margin-top: 0 !important
+  margin: 0 0 18px;
 }
 
 .eyebrow.light {
@@ -214,7 +234,7 @@ input {
 }
 
 .hero h1 {
-  font-size: clamp(54px,6vw,92px);
+  font-size: clamp(54px, 6vw, 92px);
   line-height: .93;
   margin: 0 0 24px;
   letter-spacing: -.035em;
@@ -233,7 +253,7 @@ input {
   font-size: 16px;
   line-height: 1.65;
   max-width: 570px;
-  color: rgba(255,255,255,.82);
+  color: rgba(255, 255, 255, .82);
 }
 
 .hero-actions {
@@ -269,50 +289,143 @@ input {
   opacity: .75;
 }
 
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
 .section {
   padding: 110px 5vw;
 }
 
-.section-intro {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: start;
-  margin-bottom: 50px;
-  gap: 60px
-  /* remove unwanted height*/
-  min-height: 0 !important;
-  height: auto !important;
 
-  /* remove unwanted spacing */
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  margin-top: 0 !important;
-  margin-bottom: 40px !important;
+/* =========================================================
+   EXPLORE SECTION
+   TIGHTER VERSION — KEEPS FULL TEXT
+========================================================= */
+
+#explore {
+  /*
+    Overrides the global 110px vertical padding only
+    for the Explore section.
+  */
+  padding-top: 48px;
+  padding-bottom: 55px;
+}
+
+#explore .section-intro {
+  display: grid;
+
+  /*
+    Give the text column slightly more width.
+    This reduces wrapping without reducing font size.
+  */
+  grid-template-columns: .85fr 1.15fr;
+
+  align-items: start;
+  gap: clamp(40px, 5vw, 75px);
+
+  min-height: 0;
+  height: auto;
+
+  padding: 0;
+  margin: 0 0 28px;
+}
+
+#explore .section-intro > div {
+  margin: 0;
+  padding: 0;
+  align-self: start;
+}
+
+#explore .section-intro > div:first-child {
+  padding-top: 0;
+}
+
+#explore .section-intro .eyebrow {
+  margin: 0 0 18px;
 }
 
 .section h2,
 .journey h2 {
-  font-size: clamp(45px,4vw,67px);
+  font-size: clamp(45px, 4vw, 67px);
   line-height: 1;
   margin: 0;
 }
 
-.intro-copy {
-   margin-top: 0 !important;
-   padding-top: 0 !important;
-   align-self: start;
+
+/* =========================================================
+   EXPLORE STORY / RIGHT COLUMN
+========================================================= */
+
+#explore .intro-copy {
+  margin: 0;
+  padding: 0;
+  align-self: start;
+  justify-self: stretch;
+
+  width: 100%;
+  max-width: 760px;
+
+  font-size: 15px;
+  line-height: 1.55;
+  color: #57534d;
 }
+
+#explore .intro-copy p {
+  margin: 0 0 11px;
+}
+
+#explore .intro-copy p:last-child {
+  margin-bottom: 0;
+}
+
+#explore .intro-title {
+  display: block;
+  margin: 0 0 10px;
+
+  color: #171713;
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+#explore .intro-tagline {
+  display: block;
+  margin-top: 12px;
+
+  color: #171713;
+  font-weight: 700;
+}
+
+
+/* Support your existing HTML if intro-copy is still a <p> */
+
+#explore p.intro-copy {
+  margin: 0;
+}
+
+
+/* =========================================================
+   EXPLORE FILTERS
+========================================================= */
 
 .filter-row {
   display: flex;
   gap: 8px;
   justify-content: flex-end;
+
   border-bottom: 1px solid #d5d0c7;
-  margin-bottom: 24px;
-  padding-bottom: 12px;
-  overflow: auto;
-  margin-top: 0 !important;
-  padding-top: 0 !important;
+
+  margin: 0 0 24px;
+  padding: 0 0 12px;
+
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.filter-row::-webkit-scrollbar {
+  display: none;
 }
 
 .filter {
@@ -329,9 +442,14 @@ input {
   border-bottom: 1px solid #111;
 }
 
+
+/* =========================================================
+   MASONRY / PROPERTY CARDS
+========================================================= */
+
 .masonry {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
 
@@ -357,34 +475,40 @@ input {
 }
 
 .img-1 {
-  background-image: url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85");
+  background-image:
+    url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85");
 }
 
 .img-2 {
-  background-image: url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=85");
+  background-image:
+    url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=85");
 }
 
 .img-3 {
-  background-image: url("https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1000&q=85");
+  background-image:
+    url("https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1000&q=85");
 }
 
 .img-4 {
-  background-image: url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85");
+  background-image:
+    url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85");
 }
 
 .img-5 {
-  background-image: url("https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=85");
+  background-image:
+    url("https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=85");
 }
 
 .img-6 {
-  background-image: url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85");
+  background-image:
+    url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85");
 }
 
 .motion-tag {
   position: absolute;
   left: 12px;
   top: 12px;
-  background: rgba(0,0,0,.55);
+  background: rgba(0, 0, 0, .55);
   color: white;
   padding: 7px 9px;
   font-size: 8px;
@@ -425,6 +549,11 @@ input {
   margin-top: 40px;
 }
 
+
+/* =========================================================
+   STORY
+========================================================= */
+
 .story {
   min-height: 600px;
   display: grid;
@@ -439,12 +568,12 @@ input {
 }
 
 .story h2 {
-  font-size: clamp(46px,4.5vw,72px);
+  font-size: clamp(46px, 4.5vw, 72px);
   line-height: 1.04;
   margin: 0 0 26px;
 }
 
-.story-copy>p:not(.eyebrow) {
+.story-copy > p:not(.eyebrow) {
   line-height: 1.8;
   color: #d4d6d0;
   max-width: 600px;
@@ -454,9 +583,14 @@ input {
 .story-image {
   min-height: 600px;
   background:
-    linear-gradient(0deg,rgba(0,0,0,.15),rgba(0,0,0,.05)),
+    linear-gradient(
+      0deg,
+      rgba(0, 0, 0, .15),
+      rgba(0, 0, 0, .05)
+    ),
     url("https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1100&q=85")
-    center/cover;
+    center / cover;
+
   position: relative;
 }
 
@@ -464,12 +598,17 @@ input {
   position: absolute;
   right: 8%;
   bottom: 12%;
-  font-family: Georgia,serif;
+  font-family: Georgia, serif;
   font-style: italic;
   font-size: 25px;
   color: #e6c79a;
   transform: rotate(-4deg);
 }
+
+
+/* =========================================================
+   JOURNEY
+========================================================= */
 
 .journey {
   background: #f8f5ef;
@@ -477,7 +616,7 @@ input {
 
 .steps {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   margin-top: 55px;
 }
@@ -486,7 +625,7 @@ input {
   position: relative;
 }
 
-.step>span {
+.step > span {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -504,23 +643,27 @@ input {
 }
 
 .step-1 {
-  background-image: url("https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=800&q=80");
+  background-image:
+    url("https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=800&q=80");
 }
 
 .step-2 {
-  background-image: url("https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80");
+  background-image:
+    url("https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80");
 }
 
 .step-3 {
-  background-image: url("https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80");
+  background-image:
+    url("https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80");
 }
 
 .step-4 {
-  background-image: url("https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80");
+  background-image:
+    url("https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80");
 }
 
 .step h3 {
-  font-family: Georgia,serif;
+  font-family: Georgia, serif;
   font-size: 22px;
   margin: 17px 0 8px;
 }
@@ -531,6 +674,11 @@ input {
   color: #666159;
 }
 
+
+/* =========================================================
+   FUTURE
+========================================================= */
+
 .future {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
@@ -538,16 +686,41 @@ input {
   background: #eeebe4;
 }
 
+
+/* VIDEO AREA */
+
 .phone-wrap {
   display: grid;
   place-items: center;
-  background: radial-gradient(
-    circle at 50% 50%,
-    #fff 0,
-    #e2ddd2 55%,
-    #cbc5b9 100%
-  );
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      #fff 0,
+      #e2ddd2 55%,
+      #cbc5b9 100%
+    );
 }
+
+
+/*
+  If you've replaced the old phone mockup with a video,
+  this fills the entire phone-wrap div.
+*/
+
+.section-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 620px;
+  object-fit: cover;
+}
+
+
+/* OLD PHONE MOCKUP
+   Keep these only if another part of the page still uses it.
+*/
 
 .phone {
   width: 245px;
@@ -555,7 +728,7 @@ input {
   border: 9px solid #171713;
   border-radius: 37px;
   background: white;
-  box-shadow: 0 25px 50px rgba(0,0,0,.2);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, .2);
   padding: 20px 12px;
   transform: rotate(-5deg);
 }
@@ -573,8 +746,8 @@ input {
   letter-spacing: .16em;
 }
 
-.phone-ui>p {
-  font-family: Georgia;
+.phone-ui > p {
+  font-family: Georgia, serif;
   font-size: 23px;
   margin: 20px 0 10px;
 }
@@ -588,7 +761,8 @@ input {
 }
 
 .pc1 {
-  background-image: url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=600&q=80");
+  background-image:
+    url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=600&q=80");
 }
 
 .phone-card span {
@@ -596,7 +770,7 @@ input {
   bottom: 10px;
   left: 10px;
   color: white;
-  background: rgba(0,0,0,.4);
+  background: rgba(0, 0, 0, .4);
   padding: 5px;
 }
 
@@ -613,12 +787,17 @@ input {
 }
 
 .pc2 {
-  background-image: url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=400&q=80");
+  background-image:
+    url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=400&q=80");
 }
 
 .pc3 {
-  background-image: url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=400&q=80");
+  background-image:
+    url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=400&q=80");
 }
+
+
+/* FUTURE COPY */
 
 .future-copy {
   padding: 100px 6vw;
@@ -633,7 +812,7 @@ input {
   white-space: nowrap;
 }
 
-.future-copy>p:not(.eyebrow) {
+.future-copy > p:not(.eyebrow) {
   line-height: 1.7;
   color: #68645c;
 }
@@ -649,13 +828,13 @@ input {
   font-size: 13px;
 }
 
-.future li:before {
+.future li::before {
   content: "○";
   margin-right: 10px;
 }
 
 .future blockquote {
-  font-family: Georgia,serif;
+  font-family: Georgia, serif;
   font-style: italic;
   color: #9d927f;
   font-size: 31px;
@@ -663,6 +842,11 @@ input {
   margin: 0;
   padding: 50px;
 }
+
+
+/* =========================================================
+   WAITLIST
+========================================================= */
 
 .waitlist {
   height: 470px;
@@ -676,10 +860,15 @@ input {
 .waitlist-bg {
   position: absolute;
   inset: 0;
+
   background:
-    linear-gradient(90deg,rgba(8,9,7,.8),rgba(8,9,7,.25)),
+    linear-gradient(
+      90deg,
+      rgba(8, 9, 7, .8),
+      rgba(8, 9, 7, .25)
+    ),
     url("https://images.unsplash.com/photo-1600607688960-e095ff83135c?auto=format&fit=crop&w=2200&q=85")
-    center/cover;
+    center / cover;
 }
 
 .waitlist-copy {
@@ -695,7 +884,7 @@ input {
   margin: 0 0 18px;
 }
 
-.waitlist-copy>p:not(.eyebrow) {
+.waitlist-copy > p:not(.eyebrow) {
   color: #e0ddd6;
   line-height: 1.6;
 }
@@ -708,8 +897,8 @@ input {
 
 .waitlist input {
   flex: 1;
-  background: rgba(0,0,0,.35);
-  border: 1px solid rgba(255,255,255,.35);
+  background: rgba(0, 0, 0, .35);
+  border: 1px solid rgba(255, 255, 255, .35);
   color: white;
   padding: 0 17px;
   outline: none;
@@ -719,13 +908,20 @@ input {
   color: #c7c2b8;
 }
 
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
 footer {
   background: #121311;
   color: #d5d3ce;
   padding: 70px 5vw 35px;
+
   display: grid;
-  grid-template-columns: 2fr repeat(3,1fr);
+  grid-template-columns: 2fr repeat(3, 1fr);
   gap: 45px;
+
   position: relative;
 }
 
@@ -733,14 +929,14 @@ footer .brand {
   color: white;
 }
 
-footer>div:not(.footer-brand) {
+footer > div:not(.footer-brand) {
   display: flex;
   flex-direction: column;
   gap: 11px;
   font-size: 12px;
 }
 
-footer>div>strong {
+footer > div > strong {
   color: white;
   margin-bottom: 5px;
 }
@@ -756,26 +952,36 @@ footer a {
 }
 
 .copyright {
-  grid-column: 1/-1;
+  grid-column: 1 / -1;
   border-top: 1px solid #2a2b28;
   padding-top: 24px;
   font-size: 10px;
   color: #777;
 }
 
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
 .mobile-menu {
   position: fixed;
   z-index: 100;
   inset: 0;
+
   background: #171713;
   color: white;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   gap: 30px;
-  font-family: Georgia;
+
+  font-family: Georgia, serif;
   font-size: 30px;
+
   transform: translateX(100%);
   transition: .35s;
 }
@@ -788,16 +994,25 @@ footer a {
   position: absolute;
   right: 30px;
   top: 25px;
+
   border: 0;
   background: none;
+
   color: white;
   font-size: 42px;
 }
 
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
 .reveal {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity .8s ease,transform .8s ease;
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
 }
 
 .reveal.visible {
@@ -810,9 +1025,11 @@ footer a {
 }
 
 
-/* TABLET */
+/* =========================================================
+   TABLET
+========================================================= */
 
-@media(max-width:900px) {
+@media (max-width: 900px) {
 
   .desktop-nav,
   .text-btn {
@@ -854,14 +1071,30 @@ footer a {
     padding: 80px 24px;
   }
 
-  .section-intro {
-    grid-template-columns: 1fr;
-    gap: 25px;
+
+  /* EXPLORE TABLET */
+
+  #explore {
+    padding: 55px 24px;
   }
 
-  .intro-copy {
-    justify-self: start;
+  #explore .section-intro {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 25px;
   }
+
+  #explore .intro-copy {
+    justify-self: start;
+    max-width: 720px;
+  }
+
+  .filter-row {
+    justify-content: flex-start;
+  }
+
+
+  /* OTHER SECTIONS */
 
   .masonry {
     grid-template-columns: 1fr 1fr;
@@ -885,9 +1118,10 @@ footer a {
 
   .future h2 {
     white-space: normal;
+  }
 
   .future blockquote {
-    grid-column: 1/-1;
+    grid-column: 1 / -1;
     text-align: center;
   }
 
@@ -904,14 +1138,16 @@ footer a {
   }
 
   .copyright {
-    grid-column: 1/-1;
+    grid-column: 1 / -1;
   }
 }
 
 
-/* MOBILE */
+/* =========================================================
+   MOBILE
+========================================================= */
 
-@media(max-width:600px) {
+@media (max-width: 600px) {
 
   .header-actions .btn {
     display: none;
@@ -934,6 +1170,53 @@ footer a {
     align-items: flex-start;
   }
 
+
+  /* EXPLORE MOBILE */
+
+  #explore {
+    padding: 42px 20px 50px;
+  }
+
+  #explore .section-intro {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-bottom: 24px;
+  }
+
+  #explore .section-intro .eyebrow {
+    margin-bottom: 12px;
+  }
+
+  #explore .section-intro h2 {
+    font-size: clamp(42px, 13vw, 56px);
+  }
+
+  #explore .intro-copy {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  #explore .intro-title {
+    font-size: 17px;
+  }
+
+  #explore .intro-copy p {
+    margin-bottom: 10px;
+  }
+
+  .filter-row {
+    justify-content: flex-start;
+    gap: 3px;
+    margin-bottom: 20px;
+  }
+
+  .filter {
+    padding: 8px 10px;
+  }
+
+
+  /* PROPERTY CARDS */
+
   .masonry {
     grid-template-columns: 1fr;
   }
@@ -943,9 +1226,15 @@ footer a {
     height: 330px;
   }
 
+
+  /* STORY */
+
   .story-copy {
     padding: 75px 24px;
   }
+
+
+  /* JOURNEY */
 
   .steps {
     grid-template-columns: 1fr;
@@ -955,6 +1244,9 @@ footer a {
     height: 260px;
   }
 
+
+  /* FUTURE */
+
   .future {
     grid-template-columns: 1fr;
   }
@@ -963,9 +1255,16 @@ footer a {
     min-height: 610px;
   }
 
+  .section-video {
+    min-height: 610px;
+  }
+
   .future-copy {
     padding: 75px 24px;
   }
+
+
+  /* WAITLIST */
 
   .waitlist form {
     flex-direction: column;
@@ -980,15 +1279,18 @@ footer a {
     height: 520px;
   }
 
+
+  /* FOOTER */
+
   footer {
     grid-template-columns: 1fr 1fr;
   }
 
   .footer-brand {
-    grid-column: 1/-1;
+    grid-column: 1 / -1;
   }
 
   .copyright {
-    grid-column: 1/-1;
+    grid-column: 1 / -1;
   }
 }
