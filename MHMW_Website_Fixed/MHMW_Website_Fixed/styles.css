@@ -196,6 +196,7 @@ input {
   letter-spacing: .32em;
   font-weight: 600;
   margin: 0 0 24px;
+  margin-top: 0 !important
 }
 
 .eyebrow.light {
@@ -275,8 +276,18 @@ input {
 .section-intro {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: end;
+  align-items: start;
   margin-bottom: 50px;
+  gap: 60px
+  /* remove unwanted height*/
+  min-height: 0 !important;
+  height: auto !important;
+
+  /* remove unwanted spacing */
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 40px !important;
 }
 
 .section h2,
@@ -287,10 +298,9 @@ input {
 }
 
 .intro-copy {
-  max-width: 520px;
-  justify-self: end;
-  line-height: 1.7;
-  color: #5c5a54;
+   margin-top: 0 !important;
+   padding-top: 0 !important;
+   align-self: start;
 }
 
 .filter-row {
@@ -301,6 +311,8 @@ input {
   margin-bottom: 24px;
   padding-bottom: 12px;
   overflow: auto;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 .filter {
